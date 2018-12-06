@@ -1,13 +1,13 @@
 # Project: Logs Analysis
 This project had us build a python script that connected to a PostgreSQL database and return SQL queries.
 
-###Prerequisites
+#Prerequisites
 
 1. Vagrant VM
 2. Python 3 with psycopg2 module installed
 3. PostgreSQL
 
-#### Code Design
+## Code Design
 
 1. It checks the database connection.
 2. It then runs the 1st question query by running a `select` with a `count` function then joins the log and articles tables, concatenates the log.path with articles.slug, `group by` the title of the article, `order by` the count function descending so it shows the most views on top and `limit` to top 3 then prints the answer.
@@ -16,7 +16,7 @@ This project had us build a python script that connected to a PostgreSQL databas
 
 4. It then runs the 3rd question query using a `with` clause querying the log table. It first finds the number of requests per day using `num_requests`. Then it finds the number of errors per day by finding every other status except 200 OK statuses per day. Then it calculates the `error_rate` using the previous `num_requests` and `num_errors`. From there is does the `select` statement that finds the total amount of requests with a error rate greater than 1%.
 
-##### How to run code
+### How to run code
 
 1. Create a new directory named news inside your vagrant folder
 2. Copy newsserver.py file inside the newly created news directory
